@@ -1,0 +1,49 @@
+{
+  "en_tfa": {
+    "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
+    "base_path": "tfa",
+    "override_title": "Today's Feature Article",
+    "title_key": "normalizedtitle",
+    "summary_key": "extract",
+    "image_key": "thumbnail.source"
+  },
+  "en_onthisday": {
+    "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
+    "base_path": "onthisday.RANDOM.pages.0",
+    "override_title": "On this Day",
+    "title_key": "normalizedtitle",
+    "summary_key": "extract",
+    "image_key": "thumbnail.source"
+  },
+  "en_news": {
+    "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
+    "base_path": "news.RANDOM.links.0",
+    "override_title": "Today's News",
+    "title_key": "normalizedtitle",
+    "summary_key": "extract",
+    "image_key": "thumbnail.source"
+  },
+  "en_dyk": {
+    "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
+    "base_path": "dyk.RANDOM",
+    "override_title": "Did You Know?",
+    "title_key": "normalizedtitle",
+    "summary_key": "text",
+    "image_key": "thumbnail.source"
+  },
+  "es_onthisday": {
+    "url": "https://es.wikipedia.org/api/rest_v1/feed/featured/{date}",
+    "base_path": "onthisday.RANDOM.pages.0",
+    "override_title": "Un Día Como Hoy",
+    "title_key": "title",
+    "summary_key": "extract",
+    "image_key": "thumbnail.source"
+  },
+  "es_random": {
+    "url": "https://es.wikipedia.org/api/rest_v1/page/random/summary",
+    "base_path": "",
+    "title_key": "title",
+    "summary_key": "extract",
+    "image_key": "thumbnail.source"
+  }
+}
