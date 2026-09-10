@@ -44,12 +44,7 @@ python3 convert_api_wiki_to_bnw_image.py --preset es_onthisday
 # Render a random "Did You Know...?" fact in English
 python3 convert_api_wiki_to_bnw_image.py --preset en_dyk
 ```
-3. CLI Arguments
---preset-file	Path to the presets configuration file
---preset	Preset key to execute from the JSON file
---log-level	Logging verbosity (DEBUG, INFO, WARNING)
---log-file	Optional path to write output logs to a file
-4. Customizing Presets
+3. Customizing Presets
 You can add or modify presets in presets.json without modifying the core script. Example configuration:
 ```bash
 {
