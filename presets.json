@@ -70,7 +70,7 @@
     "summary_key": ["setup", "delivery"],
     "image_key": ""
   },
-    "stoic_quote": {
+  "stoic_quote": {
     "url": "https://stoic-quotes.com/api/quote",
     "base_path": "",
     "header_prefix": "Stoic Quotes",
