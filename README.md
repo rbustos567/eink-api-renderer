@@ -27,7 +27,7 @@ eink-daily-wiki/
 1. Installation
 Clone the repository and run the setup script with sudo to install required system packages and Python libraries globally:
 ```bash
-git clone https://github.com/rbustos567/eink-daily-wiki.git
+git clone https://github.com/rbustos567/eink-api-renderer.git
 cd eink-daily-wiki
 chmod +x install.sh
 sudo ./install.sh
@@ -36,13 +36,13 @@ sudo ./install.sh
 Run the main script using python3. You can specify different presets defined in presets.json:
 ```bash
 # Render English Featured Article of the Day (default)
-python3 convert_api_wiki_to_bnw_image.py --preset wiki_en_tfa
+python3 generate_eink_image_from_api.py --preset wiki_en_tfa
 
 # Render a random "On This Day" event in Spanish
-python3 convert_api_wiki_to_bnw_image.py --preset wiki_es_onthisday
+python3 generate_eink_image_from_api.py --preset wiki_es_onthisday
 
 # Render a random "Did You Know...?" fact in English
-python3 convert_api_wiki_to_bnw_image.py --preset wiki_en_dyk
+python3 generate_eink_image_from_api.py --preset wiki_en_dyk
 ```
 3. Customizing Presets
 You can add or modify presets in presets.json without modifying the core script. Example configuration:
