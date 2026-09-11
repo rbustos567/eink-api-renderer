@@ -77,5 +77,64 @@
     "title_key": "author",
     "summary_key": "text",
     "image_key": ""
-  }
+  },
+  "random_cocktail": {
+    "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php",
+    "base_path": "drinks.0",
+    "header_prefix": "The Cocktail DB",
+    "title_key": "strDrink",
+    "summary_key": "strInstructions",
+    "image_key": "strDrinkThumb"
+  },
+  "zen_quote": {
+    "url": "https://zenquotes.io/api/random",
+    "base_path": "0",
+    "header_prefix": "Zen Quotes",
+    "title_key": "a",
+    "summary_key": "q",
+    "image_key": ""
+  },
+  "open_trivia": {
+    "url": "https://opentdb.com/api.php?amount=1&type=multiple",
+    "base_path": "results.0",
+    "header_prefix": "Open Trivia DB",
+    "title_key": "category",
+    "summary_key": ["question", "correct_answer"],
+    "image_key": ""
+  },
+  "fact_facts": {
+    "url": "https://factfacts.com/api.php?cat=science",
+    "base_path": "fact",
+    "header_prefix": "Fact Facts",
+    "title_key": "category",
+    "summary_key": "text",
+    "image_key": ""
+  },
+  "meow_facts": {
+    "url": "https://meowfacts.herokuapp.com/",
+    "base_path": "data.0",
+    "header_prefix": "Meow Facts",
+    "override_title": "CAT FACT",
+    "title_key": "",
+    "summary_key": "",
+    "image_key": ""
+  },
+  "useless_facts": {
+    "url": "https://uselessfacts.jsph.pl/api/v2/facts/random",
+    "base_path": "",
+    "header_prefix": "Useless Facts",
+    "override_title": "Random Fact",
+    "title_key": "",
+    "summary_key": "text",
+    "image_key": ""
+  },
+  "daily_advice": {
+    "url": "https://api.adviceslip.com/advice",
+    "base_path": "slip",
+    "header_prefix": "Adviceslip",
+    "override_title": "Daily Advice",
+    "title_key": "",
+    "summary_key": "advice",
+    "image_key": ""
+  },
 }
