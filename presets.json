@@ -106,7 +106,7 @@
     "url": "https://meowfacts.herokuapp.com/",
     "base_path": "data.0",
     "header_prefix": "Meow Facts",
-    "override_title": "CAT FACT",
+    "override_title": "Cat Fact",
     "title_key": "",
     "summary_key": "",
     "image_key": ""
