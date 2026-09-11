@@ -20,7 +20,6 @@ eink-daily-wiki/
 ├── presets.json                       # API endpoint configuration & mapping
 ├── install.sh                         # System dependency installer
 ├── README.md                          # Documentation
-└── .gitignore                         # Ignored files (outputs, logs)
 ```
 ---
 ## Quick Start
@@ -28,7 +27,7 @@ eink-daily-wiki/
 Clone the repository and run the setup script with sudo to install required system packages and Python libraries globally:
 ```bash
 git clone https://github.com/rbustos567/eink-api-renderer.git
-cd eink-daily-wiki
+cd eink-api-renderer
 chmod +x install.sh
 sudo ./install.sh
 ```
