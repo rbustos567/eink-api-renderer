@@ -123,7 +123,7 @@
   "daily_advice": {
     "url": "https://api.adviceslip.com/advice",
     "base_path": "slip",
-    "header_prefix": "Adviceslip",
+    "header_prefix": "Advice Slip",
     "override_title": "Daily Advice",
     "title_key": "",
     "summary_key": "advice",
