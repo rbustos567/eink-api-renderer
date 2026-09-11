@@ -1,4 +1,4 @@
-# eink-daily-wiki
+# eink-api-renderer
 
 An automated Python system to fetch, parse, and render dynamic content from any JSON REST API onto a Waveshare 7.5" e-Paper display via Raspberry Pi. 
 
@@ -16,7 +16,7 @@ Fully configurable via `presets.json` with support for deep JSON path traversal,
 
 ```text
 eink-daily-wiki/
-├── convert_api_wiki_to_bnw_image.py   # Main rendering & fetching script
+├── generate_eink_image_from_api.py    # Main rendering & fetching script
 ├── presets.json                       # API endpoint configuration & mapping
 ├── install.sh                         # System dependency installer
 ├── README.md                          # Documentation
@@ -36,13 +36,13 @@ sudo ./install.sh
 Run the main script using python3. You can specify different presets defined in presets.json:
 ```bash
 # Render English Featured Article of the Day (default)
-python3 convert_api_wiki_to_bnw_image.py --preset en_tfa
+python3 convert_api_wiki_to_bnw_image.py --preset wiki_en_tfa
 
 # Render a random "On This Day" event in Spanish
-python3 convert_api_wiki_to_bnw_image.py --preset es_onthisday
+python3 convert_api_wiki_to_bnw_image.py --preset wiki_es_onthisday
 
 # Render a random "Did You Know...?" fact in English
-python3 convert_api_wiki_to_bnw_image.py --preset en_dyk
+python3 convert_api_wiki_to_bnw_image.py --preset wiki_en_dyk
 ```
 3. Customizing Presets
 You can add or modify presets in presets.json without modifying the core script. Example configuration:
