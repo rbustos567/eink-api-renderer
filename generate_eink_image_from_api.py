@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 # Get directory where the script is located
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_OUTPUT = os.path.join(SCRIPT_DIR, "wikipedia_output.bmp")
+DEFAULT_OUTPUT = os.path.join(SCRIPT_DIR, "output.bmp")
 
 FONT_TITLE_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_BODY_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
