@@ -1,5 +1,5 @@
 {
-  "en_tfa": {
+  "wiki_en_tfa": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "tfa",
     "override_title": "Today's Feature Article",
@@ -7,7 +7,7 @@
     "summary_key": "extract",
     "image_key": "thumbnail.source"
   },
-  "en_onthisday": {
+  "wiki_en_onthisday": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "onthisday.RANDOM.pages.0",
     "override_title": "On this Day",
@@ -15,7 +15,7 @@
     "summary_key": "extract",
     "image_key": "thumbnail.source"
   },
-  "en_news": {
+  "wiki_en_news": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "news.RANDOM.links.0",
     "override_title": "Today's News",
@@ -23,7 +23,7 @@
     "summary_key": "extract",
     "image_key": "thumbnail.source"
   },
-  "en_dyk": {
+  "wiki_en_dyk": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "dyk.RANDOM",
     "override_title": "Did You Know?",
@@ -31,7 +31,7 @@
     "summary_key": "text",
     "image_key": "thumbnail.source"
   },
-  "es_onthisday": {
+  "wiki_es_onthisday": {
     "url": "https://es.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "onthisday.RANDOM.pages.0",
     "override_title": "Un Día Como Hoy",
@@ -39,11 +39,27 @@
     "summary_key": "extract",
     "image_key": "thumbnail.source"
   },
-  "es_random": {
+  "wiki_es_random": {
     "url": "https://es.wikipedia.org/api/rest_v1/page/random/summary",
     "base_path": "",
     "title_key": "title",
     "summary_key": "extract",
     "image_key": "thumbnail.source"
+  },
+  "random_joke": {
+    "url": "https://official-joke-api.appspot.com/random_joke",
+    "base_path": "",
+    "override_title": "Joke of the Day",
+    "title_key": "",
+    "summary_key": ["setup", "punchline"],
+    "image_key": ""
+  },
+  "tech_joke_two_part": {
+    "url": "https://v2.jokeapi.dev/joke/Programming,Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart",
+    "base_path": "",
+    "override_title": "Tech Humor",
+    "title_key": "",
+    "summary_key": ["setup", "delivery"],
+    "image_key": ""
   }
 }
