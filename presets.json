@@ -128,5 +128,14 @@
     "title_key": "",
     "summary_key": "advice",
     "image_key": ""
+  },
+  "daily_quotes": {
+    "url": "https://api.quotable.io/quotes/random",
+    "base_path": "0",
+    "header_prefix": "Quotable",
+    "override_title": "Daily Quote",
+    "title_key": "author",
+    "summary_key": "content",
+    "image_key": ""
   }
 }
