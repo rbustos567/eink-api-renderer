@@ -3,10 +3,15 @@ from datetime import datetime
 from io import BytesIO
 import json
 import logging
+import os
 import random
 import textwrap
 import requests
 from PIL import Image, ImageDraw, ImageFont
+
+# Get directory where the script is located
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+DEFAULT_OUTPUT = os.path.join(SCRIPT_DIR, "wikipedia_output.bmp")
 
 FONT_TITLE_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 FONT_BODY_PATH = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
@@ -73,6 +78,7 @@ def main():
     parser = argparse.ArgumentParser(description="Configurable Wikipedia e-Paper Generator")
     parser.add_argument('--preset-file', default='presets.json', help="Path to presets JSON file")
     parser.add_argument('--preset', default='en_tfa', help="Preset key to execute")
+    parser.add_argument('--output', default=DEFAULT_OUTPUT, help="Full output file path (default: wikipedia_output.bmp in script folder)")
     parser.add_argument('--log-level', choices=['DEBUG', 'INFO', 'WARNING'], default='INFO', help="Set logging verbosity level")
     parser.add_argument('--log-file', help="Path to output file for logging (optional)")
     args = parser.parse_args()
@@ -86,7 +92,7 @@ def main():
 
     if args.log_file:
         log_config['filename'] = args.log_file
-        log_config['filemode'] = 'a'  # Append mode
+        log_config['filemode'] = 'a'
 
     logging.basicConfig(**log_config)
 
@@ -127,7 +133,6 @@ def main():
         logging.warning(f"Failed to resolve base node using path '{config.get('base_path')}'")
         return
 
-    # Evaluate title override vs dynamic extraction
     if config.get('override_title'):
         title = config['override_title']
         logging.debug(f"Using override title: '{title}'")
@@ -172,8 +177,14 @@ def main():
 
     # 8. Export 1-bit BMP
     monochrome = canvas.convert('1', dither=Image.Dither.FLOYDSTEINBERG)
-    monochrome.save("wikipedia_output.bmp")
-    logging.info("Image 'wikipedia_output.bmp' generated and exported successfully.")
+    
+    # Ensure parent directory of output exists
+    output_dir = os.path.dirname(os.path.abspath(args.output))
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
+
+    monochrome.save(args.output)
+    logging.info(f"Image successfully generated and saved to: {args.output}")
 
 if __name__ == "__main__":
     main()
