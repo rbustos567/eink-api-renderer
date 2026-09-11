@@ -79,10 +79,10 @@ def get_dynamic_font(font_path, text, max_w, max_h, start_size=24, min_size=12, 
     return font, "\n\n".join(wrapped_paragraphs)
 
 def main():
-    parser = argparse.ArgumentParser(description="Configurable Wikipedia e-Paper Generator")
+    parser = argparse.ArgumentParser(description="Configurable e-Paper API Content Renderer")
     parser.add_argument('--preset-file', default='presets.json', help="Path to presets JSON file")
     parser.add_argument('--preset', default='en_tfa', help="Preset key to execute")
-    parser.add_argument('--output', default=DEFAULT_OUTPUT, help="Full output file path (default: wikipedia_output.bmp in script folder)")
+    parser.add_argument('--output', default=DEFAULT_OUTPUT, help="Full output file path (default: output.bmp in script folder)")
     parser.add_argument('--log-level', choices=['DEBUG', 'INFO', 'WARNING'], default='INFO', help="Set logging verbosity level")
     parser.add_argument('--log-file', help="Path to output file for logging (optional)")
     args = parser.parse_args()
@@ -141,7 +141,7 @@ def main():
         title = config['override_title']
         logging.debug(f"Using override title: '{title}'")
     else:
-        title = extract_json_node(base_node, config.get('title_key', '')) or "Featured Article"
+        title = extract_json_node(base_node, config.get('title_key', '')) or "Featured Content"
 
     # Support for single key (string) or dual/multiple paragraph keys (list)
     summary_keys = config.get('summary_key', '')
@@ -157,7 +157,14 @@ def main():
 
     image_url = extract_json_node(base_node, config.get('image_key', ''))
 
-    logging.info(f"Article parsed successfully -> Title: '{title}'")
+    # Build Header String (e.g. "WIKIPEDIA | Article Title" or just "Article Title")
+    header_prefix = config.get('header_prefix')
+    if header_prefix:
+        header_text = f"{header_prefix} | {title}" if title else header_prefix
+    else:
+        header_text = title
+
+    logging.info(f"Article parsed successfully -> Header: '{header_text}'")
     logging.debug(f"Summary text length: {len(summary)} chars. Image URL: {image_url}")
 
     # 4. Canvas setup & font sizing
@@ -165,7 +172,7 @@ def main():
     draw = ImageDraw.Draw(canvas)
 
     body_w = 480 if image_url else 760
-    title_font, fmt_title = get_dynamic_font(FONT_TITLE_PATH, f"WIKIPEDIA | {title}", 760, 35, 24, 16, True)
+    title_font, fmt_title = get_dynamic_font(FONT_TITLE_PATH, header_text, 760, 35, 24, 16, True)
     body_font, fmt_summary = get_dynamic_font(FONT_BODY_PATH, summary, body_w, 380, 22, 12, False)
 
     # 5. Draw Title & Separator
@@ -187,7 +194,7 @@ def main():
         except Exception as e:
             logging.warning(f"Failed to fetch or process thumbnail image: {e}")
 
-    # 7. Draw Body Text (with inter-paragraph spacing)
+    # 7. Draw Body Text
     draw.text((20, 70), fmt_summary, fill=0, font=body_font, spacing=6)
 
     # 8. Export 1-bit BMP
