@@ -58,4 +58,4 @@ You can add or modify presets in presets.json without modifying the core script.
 }
 ```
 ## Output
-The script generates a 1-bit monochrome bitmap file (wikipedia_output.bmp) in the root directory, optimized for immediate rendering on a Waveshare 7.5" e-Paper display via SPI.
+The script generates a 1-bit monochrome bitmap file (output.bmp) in the root directory, optimized for immediate rendering on a Waveshare 7.5" e-Paper display via SPI.
