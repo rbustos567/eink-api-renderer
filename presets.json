@@ -2,6 +2,7 @@
   "wiki_en_tfa": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "tfa",
+    "header_prefix": "WIKIPEDIA",
     "override_title": "Today's Feature Article",
     "title_key": "normalizedtitle",
     "summary_key": "extract",
@@ -10,6 +11,7 @@
   "wiki_en_onthisday": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "onthisday.RANDOM.pages.0",
+    "header_prefix": "WIKIPEDIA",
     "override_title": "On this Day",
     "title_key": "normalizedtitle",
     "summary_key": "extract",
@@ -18,6 +20,7 @@
   "wiki_en_news": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "news.RANDOM.links.0",
+    "header_prefix": "WIKIPEDIA",
     "override_title": "Today's News",
     "title_key": "normalizedtitle",
     "summary_key": "extract",
@@ -26,6 +29,7 @@
   "wiki_en_dyk": {
     "url": "https://en.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "dyk.RANDOM",
+    "header_prefix": "WIKIPEDIA",
     "override_title": "Did You Know?",
     "title_key": "normalizedtitle",
     "summary_key": "text",
@@ -34,6 +38,7 @@
   "wiki_es_onthisday": {
     "url": "https://es.wikipedia.org/api/rest_v1/feed/featured/{date}",
     "base_path": "onthisday.RANDOM.pages.0",
+    "header_prefix": "WIKIPEDIA",
     "override_title": "Un Día Como Hoy",
     "title_key": "title",
     "summary_key": "extract",
@@ -42,6 +47,7 @@
   "wiki_es_random": {
     "url": "https://es.wikipedia.org/api/rest_v1/page/random/summary",
     "base_path": "",
+    "header_prefix": "WIKIPEDIA",
     "title_key": "title",
     "summary_key": "extract",
     "image_key": "thumbnail.source"
@@ -49,6 +55,7 @@
   "random_joke": {
     "url": "https://official-joke-api.appspot.com/random_joke",
     "base_path": "",
+    "header_prefix": "Official Joke API",
     "override_title": "Joke of the Day",
     "title_key": "",
     "summary_key": ["setup", "punchline"],
@@ -57,6 +64,7 @@
   "tech_joke_two_part": {
     "url": "https://v2.jokeapi.dev/joke/Programming,Miscellaneous?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart",
     "base_path": "",
+    "header_prefix": "Tech Joke API",
     "override_title": "Tech Humor",
     "title_key": "",
     "summary_key": ["setup", "delivery"],
