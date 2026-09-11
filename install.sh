@@ -24,4 +24,4 @@ pip install Pillow requests --break-system-packages
 echo ""
 echo "=== Installation Complete! ==="
 echo "To run your script globally, execute:"
-echo "  python3 generate_eink_wiki.py --preset en_tfa"
+echo "python3 convert_api_wiki_to_bnw_image.py --preset en_tfa"
