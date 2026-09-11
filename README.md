@@ -1,8 +1,8 @@
 # eink-daily-wiki
 
-An automated Python script designed for Raspberry Pi to fetch, parse, and render dynamic Wikipedia content onto a Waveshare 7.5" e-Paper display.
+An automated Python system to fetch, parse, and render dynamic content from any JSON REST API onto a Waveshare 7.5" e-Paper display via Raspberry Pi. 
 
-It supports featured articles, historical events ("On This Day"), trivia ("Did You Know"), and trending pages using a flexible JSON preset configuration system and dynamic 1-bit BMP dithering.
+Fully configurable via `presets.json` with support for deep JSON path traversal, random selection keywords, multi-paragraph bodies, title overrides, and custom file output paths.
 
 ## Features
 
