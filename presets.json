@@ -78,14 +78,6 @@
     "summary_key": "text",
     "image_key": ""
   },
-  "random_cocktail": {
-    "url": "https://www.thecocktaildb.com/api/json/v1/1/random.php",
-    "base_path": "drinks.0",
-    "header_prefix": "The Cocktail DB",
-    "title_key": "strDrink",
-    "summary_key": "strInstructions",
-    "image_key": "strDrinkThumb"
-  },
   "zen_quote": {
     "url": "https://zenquotes.io/api/random",
     "base_path": "0",
