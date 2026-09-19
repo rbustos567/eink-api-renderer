@@ -15,7 +15,7 @@ echo "=== Installing dependencies for e-Paper Wiki Generator ==="
 # 1. Update package lists and install system dependencies
 echo "[1/2] Updating apt and installing system packages..."
 apt-get update
-apt-get install -y python3 python3-pip fonts-dejavu
+apt-get install -y python3 python3-pip fonts-dejavu libopenjp2-7 libfreetype6 libfreetype6-dev
 
 # 2. Install Python libraries system-wide
 echo "[2/2] Installing Python libraries (Pillow, requests)..."
